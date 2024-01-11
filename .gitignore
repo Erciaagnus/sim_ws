@@ -18,3 +18,4 @@ logs/**
 
 #windows
 .DS_Store
+.catkin_tools/profiles/default/devel_collisions.txt
