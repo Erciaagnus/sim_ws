@@ -1,0 +1,20 @@
+# Build
+build/**
+
+#devel
+devel/**
+
+#catkin_tools
+.catkin_tools/**
+
+#logs
+logs/**
+
+# VSCode
+.vscode/**
+.idea/**
+.cashe/**
+.history/**
+
+#windows
+.DS_Store
