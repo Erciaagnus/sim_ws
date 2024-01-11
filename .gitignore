@@ -1,6 +1,9 @@
 # Build
 build/**
 
+#devel
+devel/**
+
 # VSCode
 .vscode/**
 .idea/**
