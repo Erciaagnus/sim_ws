@@ -27,12 +27,15 @@
 		</visual>
 	</link>
 	<!-- Joint - caster wheel -->
+    <!-- Define Joint which connects link and caster wheel-->
 	<joint name="joint_chassis_caster_wheel" type="fixed">
 		<origin rpy="0 0 0" xyz="0.8 0 -0.15" />
 		<child link="link_caster_wheel" />
 		<parent link="link_chassis" />
 		<joint_properties damping="1.0" friction="1.0" />
 	</joint>
+
+    <!-- Define variable type of links -->
 	<!-- Link - caster wheel -->
 	<link name="link_caster_wheel">
 		<inertial>
@@ -40,7 +43,7 @@
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<inertia ixx="0.002526666666667" ixy="0" ixz="0" iyy="0.002526666666667" iyz="0" izz="0.005" />
 		</inertial>
-		<!-- Caster wheel support -->
+		<!-- Caster wheel support(Collison and visual part) -->
 		<collision>
 			<origin rpy="0 0 0" xyz="0 0 -0.03" />
 			<geometry>
@@ -56,7 +59,7 @@
 				<color rgba="0.2 0.2 0.4 1" />
 			</material>
 		</visual>
-		<!-- Caster wheel -->
+		<!-- Caster wheel(Collison and Visual part) -->
 		<collision>
 			<origin rpy="0 0 0" xyz="0 0 -0.15" />
 			<geometry>
@@ -73,14 +76,16 @@
 			</material>
 		</visual>
 	</link>
+
+    <!-- Define Left Wheel-->
 	<!-- Joint - chassis / left wheel -->
-	<joint name="joint_chassis_left_wheel" type="continuous">
+	<joint name="joint_chassis_left_wheel" type="continuous"> <!--"continous" means "not fixed", that is, it rotates  -->
 		<origin rpy="0 0 0" xyz="-0.5 0.65 0" />
 		<child link="link_left_wheel" />
 		<parent link="link_chassis" />
-		<axis rpy="0 0 0" xyz="0 1 0" />
-		<limit effort="10000" velocity="1000" />
-		<joint_properties damping="1.0" friction="1.0" />
+		<axis rpy="0 0 0" xyz="0 1 0" /> <!-- <axis>: appoint the rotation axis of joint, the axis of rotate is y=1-->
+		<limit effort="10000" velocity="1000" /> <!--define physical limitation of joints-->
+		<joint_properties damping="1.0" friction="1.0" /> <!-- define friction and dmaping ratio-->
 	</joint>
 	<!-- Link - left wheel -->
 	<link name="link_left_wheel">
@@ -132,6 +137,8 @@
 			</material>
 		</visual>
 	</link>
+
+    <!-- Right Wheel-->
 	<!-- Joint - chassis / right wheel -->
 	<joint name="joint_chassis_right_wheel" type="continuous">
 		<origin rpy="0 0 0" xyz="-0.5 -0.65 0" />
@@ -141,6 +148,7 @@
 		<limit effort="10000" velocity="1000" />
 		<joint_properties damping="1.0" friction="1.0" />
 	</joint>
+
 	<!-- Link - right wheel -->
 	<link name="link_right_wheel">
 		<inertial>
