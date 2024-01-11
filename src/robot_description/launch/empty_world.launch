@@ -1,0 +1,9 @@
+<launch>
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="paused" value="false" />
+		<arg name="use_sim_time" value="true" />
+		<arg name="gui" value="true" /> <!--ㅕuse user's interface-->
+		<arg name="headless" value="false" /> <!-- don't use simulation without gui-->
+        <arg name="debug" value="false"/> <!-- don't use debug -->
+	</include>
+</launch>
