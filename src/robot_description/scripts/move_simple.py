@@ -9,10 +9,9 @@ import rospy
 from geometry_msgs.msg import Twist
 from nav_msgs.msg import Odometry
 
-def odom_callback():
-   msgs=Odometry()
+def odom_callback(msg):
    """ %s:string X, Y coordinate form, string->input(msg.???) """
-   rospy.loginfo('X:%s/Y:%s' % (round(msg.pose.pose.position.x,2), round(msg.pose.pose.position.y,2)))
+   rospy.loginfo('X:%s / Y:%s' % (round(msg.pose.pose.position.x,2), round(msg.pose.pose.position.y,2)))
 
 def main():
     #(name, type, message) call_back: conduct logic and subscribed message
